@@ -37,6 +37,7 @@ export const userAPI = {
 	getUsers: () => api.get('/users/').then((r) => r.data),
 	createUser: (data) => api.post('/users/', data).then((r) => r.data),
 	updateNotificationPreferences: (preferences) => api.put('/users/me/notifications', preferences).then((r) => r.data),
+	deleteUser: (id) => api.delete(`/users/${id}`).then((r) => r.data),
 }
 
 export const notificationAPI = {
@@ -46,4 +47,4 @@ export const notificationAPI = {
 	checkRenewals: () => api.post('/notifications/check-renewals').then((r) => r.data),
 }
 
-export default api 
+export default api
